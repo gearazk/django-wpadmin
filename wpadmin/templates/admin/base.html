@@ -1,4 +1,4 @@
-{% load admin_static wpadmin_tags wpadmin_menu_tags %}{% load firstof from future %}<!DOCTYPE html>
+{% load admin_static wpadmin_tags wpadmin_menu_tags %}{#% load firstof from future %#}<!DOCTYPE html>
 <html lang="{{ LANGUAGE_CODE|default:"en-us" }}" {% if LANGUAGE_BIDI %}dir="rtl"{% endif %}>
 <head>
 {# WP Admin start #}
@@ -20,9 +20,15 @@
 <script type="text/javascript" src="{% static "wpadmin/js/lib/less.min.js" %}"></script>
 {% else %}
 <link rel="stylesheet" type="text/css" href="{% static "wpadmin/css/wpadmin.css" %}" />
+
 <link rel="stylesheet" type="text/css" href="{% static "wpadmin/css/themes/default.css" %}" />
 {% endif %}{% endwith %}
-{% wpadmin_render_custom_style %}
+
+
+<link type="text/css" rel="stylesheet" href={% wpadmin_render_custom_style %} />
+
+
+
 {% block wpadmin_extrastyle %}{% endblock %}
 {# WP Admin end #}
 <script type="text/javascript">window.__admin_media_prefix__ = "{% filter escapejs %}{% static "admin/" %}{% endfilter %}";</script>

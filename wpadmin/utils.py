@@ -3,7 +3,13 @@ WPadmin utilities.
 """
 
 from django.conf import settings
-from django.utils.importlib import import_module
+try:
+    # Django versions >= 1.9
+    from django.utils.module_loading import import_module
+except ImportError:
+    # Django versions < 1.9
+    from django.utils.importlib import import_module
+
 from django.contrib import admin
 from django.utils.translation import get_language_from_path
 
