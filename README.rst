@@ -33,14 +33,13 @@ Branches of Django WP Admin for Django older than current stable usually will no
 Only version for current stable Django will have new features, but any pull requests for older branches are welcome.
 
 
-TODO
+TODO (/gearazk version)
 ----
-* Make sure everything works fine with GeoDjango
-* Do not rely on Django admin styles, move everything to Django WP Admin styles.
-* Better documentation
-* `django-filebrowser <https://github.com/sehmaschine/django-filebrowser>`_ or `django-filer <https://github.com/stefanfoulis/django-filer>`_ support
-* `django-mptt <https://github.com/django-mptt/django-mptt>`_ support
-* Optional templates for `django-rosetta <https://github.com/mbi/django-rosetta>`_
+* Better Image Field Support
+* More test
+* Better UI support
+* Support customize the `list` template in admin
+* Push this version to Pypi
 
 
 Demo
@@ -53,7 +52,7 @@ Installation
 
 * Or from GitHub::
 
-    pip install git+https://github.com/gearazk/django-wpadmin.git#egg=django-wpadmin
+    pip install git+https://github.com/gearazk/django-wpadmin.git
 
 
 
@@ -97,4 +96,6 @@ Python code is based on `django-admin-tools <https://bitbucket.org/izi/django-ad
 WordPress look and feel is of course inspired by `WordPress <http://wordpress.org/>`_.
 
 Included icons comes from `Font Awesome <http://fontawesome.io/>`_.
+
+
 
