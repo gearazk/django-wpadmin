@@ -18,7 +18,20 @@ def get_wpadmin_settings(admin_site_name='admin'):
     """
     Get WPadmin settings for specified admin site.
     """
-    return getattr(settings, 'WPADMIN', {}).get(admin_site_name, {})
+    default_settings = {
+        'admin': {
+            'title': 'Django admin panel',
+            'menu': {
+                'top': 'wpadmin.menu.menus.BasicTopMenu',
+                'left': 'wpadmin.menu.menus.BasicLeftMenu',
+            },
+            'dashboard': {
+                'breadcrumbs': True,
+            },
+        }
+    }
+    
+    return getattr(settings, 'WPADMIN', default_settings).get(admin_site_name, {})
 
 
 def get_admin_site_name(context):

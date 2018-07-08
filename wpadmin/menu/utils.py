@@ -3,13 +3,19 @@ Menu utilities.
 """
 from fnmatch import fnmatch
 
+
 try:
     # Django versions >= 1.9
     from django.utils.module_loading import import_module
 except ImportError:
     # Django versions < 1.9
     from django.utils.importlib import import_module
-from django.core.urlresolvers import reverse
+
+try:
+    from django.core.urlresolvers import reverse
+except ImportError:
+    from django.urls import reverse
+    
 
 from wpadmin.utils import (
     get_wpadmin_settings, get_admin_site, get_admin_site_name)
